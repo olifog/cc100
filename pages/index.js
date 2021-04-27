@@ -1,6 +1,8 @@
 
 export default function Home () {
   return (
-    <div></div>
+    <div>
+      {"Churcher's College 100 Challenge"}
+    </div>
   )
 }
