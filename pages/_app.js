@@ -1,13 +1,21 @@
 import '../styles/globals.css'
+import Navbar from '../components/Navbar/Navbar'
 import PropTypes from 'prop-types'
 
-function MyApp ({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp ({ Component, pageProps }) {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <div className="container max-w-lg">
+          <Component {...pageProps} />
+        </div>
+      </main>
+    </>
+  )
 }
 
 MyApp.propTypes = {
   Component: PropTypes.elementType,
   pageProps: PropTypes.object
 }
-
-export default MyApp
