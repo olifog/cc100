@@ -13,26 +13,23 @@ export default function UserItem ({ user, logout }) {
       authProvider: new AuthenticationProvider(user)
     }
     const client = Client.initWithMiddleware(options)
-
-    await client.api('/me/photo/$value').get().then(u => {
-      const reader = new FileReader()
-      reader.readAsDataURL(u)
-      reader.onloadend = () => {
-        setPhoto(reader.result)
-      }
-    })
+    try {
+      await client.api('/me/photo/$value').get().then(u => {
+        const reader = new FileReader()
+        reader.readAsDataURL(u)
+        reader.onloadend = () => {
+          setPhoto(reader.result)
+        }
+      })
+    } catch (error) {
+      await logout()
+    }
   }, [])
-
-  if (photo === null) {
-    return (
-      <div>...</div>
-    )
-  }
 
   return (
     <div className="flex flex-row items-center pl-8">
       <Image
-        src={photo}
+        src={photo ?? '/pfp.png'}
         width={40}
         height={40}
         className="rounded-full"
