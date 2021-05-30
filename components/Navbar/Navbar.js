@@ -5,7 +5,7 @@ import NavBarItem from './NavbarItem'
 import UserItem from './UserItem'
 
 export default function Navbar () {
-  const [user, { mutate }] = useUser()
+  const { user, mutate } = useUser()
 
   async function handleLogout () {
     await fetch('/api/auth/microsoft/logout')
@@ -17,14 +17,21 @@ export default function Navbar () {
       <nav className="w-full max-w-5xl px-2 py-4 flex flex-row justify-between items-center">
         <Link href="/">
           <a className="flex">
-            Home (icon here in future)
+            ICON HERE
           </a>
         </Link>
         <div className="flex flex-row items-center divide-x divide-x-2 space-x-8">
           <div className="space-x-6">
+            <NavBarItem text="Dashboard" href="dashboard" />
+            {user && ((user.admin)
+              ? (
+                  <NavBarItem text="Settings" href="settings" />
+                )
+              : (
+                  <NavBarItem text="Progress" href="progress" />
+                )
+            )}
             <NavBarItem text="About" href="about" />
-            <NavBarItem text="Progress" href="progress" />
-            <NavBarItem text="Example tab 3" href="hi" />
           </div>
           {user
             ? (
