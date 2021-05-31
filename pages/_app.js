@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../components/Navbar'
 import PropTypes from 'prop-types'
 
 export default function MyApp ({ Component, pageProps }) {
