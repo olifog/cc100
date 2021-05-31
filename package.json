@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@hapi/iron": "^6.0.0",
+    "@headlessui/react": "^1.2.0",
     "@microsoft/microsoft-graph-client": "^2.2.1",
-    "browserslist": "^4.16.1",
     "cookie": "^0.4.1",
     "mongoose": "^5.12.5",
     "next": "^10.2.3",

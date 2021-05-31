@@ -15,10 +15,10 @@ export default function Dashboard () {
   return (
     user.admin
       ? (
-        <AdminDashboard />
+          <AdminDashboard />
         )
       : (
-        <StudentDashboard />
+          <StudentDashboard />
         )
   )
 }

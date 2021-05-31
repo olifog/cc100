@@ -23,6 +23,7 @@ export default function Navbar () {
         <div className="flex flex-row items-center divide-x divide-x-2 space-x-8">
           <div className="space-x-6">
             <NavBarItem text="Dashboard" href="dashboard" />
+            <NavBarItem text="Submissions" href="submissions" />
             {user && ((user.admin)
               ? (
                   <NavBarItem text="Settings" href="settings" />
