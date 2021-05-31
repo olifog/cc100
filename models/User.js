@@ -16,6 +16,22 @@ const UserSchema = new mongoose.Schema({
   accessToken: {
     type: String,
     required: true
+  },
+  admin: {
+    type: Boolean,
+    required: true
+  },
+  form: {
+    type: String,
+    required: false
+  },
+  tutor: {
+    type: String,
+    required: false
+  },
+  submissions: {
+    type: [mongoose.Schema.Types.ObjectId],
+    required: false
   }
 })
 
